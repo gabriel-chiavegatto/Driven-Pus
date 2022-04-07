@@ -3,6 +3,7 @@ import DGreen from "../assents/imgs/D_green.png";
 import DYellow from "../assents/imgs/D_yellow.png";
 import Plus from "../assents/imgs/plus.png";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Planos() {
     return (
@@ -11,15 +12,17 @@ export default function Planos() {
                 <header>
                     Escolha seu plano
                 </header>
-                <Container>
-                    <div className="logo">
-                        <img src={DWhite} alt="D Driven" />
-                        <img src={Plus} alt="plus" />
-                    </div>
-                    <div className="preco">
-                        PREÇO
-                    </div>
-                </Container>
+                <Link to="/id/">
+                    <Container>
+                        <div className="logo">
+                            <img src={DWhite} alt="D Driven" />
+                            <img src={Plus} alt="plus" />
+                        </div>
+                        <div className="preco">
+                            PREÇO
+                        </div>
+                    </Container>
+                </Link>
                 <Container>
                     <div className="logo">
                         <img src={DGreen} alt="D Driven" />
@@ -71,6 +74,10 @@ const Container = styled.section`
     border-radius: 12px;
     position: relative;
     margin-bottom:10px;
+
+    &:hover{
+        cursor: pointer
+    }
 
     .logo{
         position:absolute;
